@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}COVID-19 Cases{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>COVID-19 Cases in Mexico</h1>
+</div>
+
+{% if confirmed_cases %}
+    <p>Casos confirmados en México al {{ target_date }}: {{ confirmed_cases }}</p>
+{% else %}
+    <p>Unable to retrieve COVID-19 data at the moment.</p>
+{% endif %}
+{% endblock %}

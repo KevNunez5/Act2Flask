@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Wikipedia Search{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Wikipedia Search</h1>
+</div>
+
+{{ wtf.quick_form(form) }}
+
+{% if episode_list %}
+    <h3>List of Episodes:</h3>
+    <ol>
+    {% for episode in episode_list %}
+        <li>{{ episode }}</li>
+    {% endfor %}
+    </ol>
+{% else %}
+    <p>No episodes found or unable to retrieve information.</p>
+{% endif %}
+{% endblock %}
